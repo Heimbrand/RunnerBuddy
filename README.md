@@ -11,4 +11,5 @@ Intended features:
 * Custom Exceptions
 * Custom Attributes
 * Code first Efc Sql database
+* Serilog logging 
 * And more...

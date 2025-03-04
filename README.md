@@ -4,7 +4,7 @@
 
 Intended features:
 * Generic baserepository
-* Dynamic registration of services with the help of reflections
+* Dynamic registration of services with the help of reflection
 * Mediatr
 * Cqrs
 * GlobalExceptionHandler

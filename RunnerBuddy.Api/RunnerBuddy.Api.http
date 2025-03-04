@@ -1,0 +1,6 @@
+@RunnerBuddy.Api_HostAddress = http://localhost:5212
+
+GET {{RunnerBuddy.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

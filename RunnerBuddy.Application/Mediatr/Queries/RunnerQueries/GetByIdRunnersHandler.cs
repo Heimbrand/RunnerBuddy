@@ -15,7 +15,7 @@ internal sealed class GetByIdRunnersHandler(IRunnerRepository repo, MapRunner ma
         {
             throw new Exception($"Runner with id {request.Id} not found.");
         }
-        var dto = mapper.MapDto(entity);
+        var dto = mapper.MapToDto(entity);
         return dto;
     }
 }

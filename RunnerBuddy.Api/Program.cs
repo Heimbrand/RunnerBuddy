@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using RunnerBuddy.Api.EndpointRegistration;
 using RunnerBuddy.Api.ExceptionHandler;
 using RunnerBuddy.Application;
 using RunnerBuddy.Persistance;
@@ -6,6 +7,12 @@ using RunnerBuddy.Persistance.Context;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+logger.Information("Vevar igång maskineriet (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')>");
 
 var configs = new ConfigurationBuilder()  
     .AddJsonFile("appsettings.json")
@@ -21,7 +28,7 @@ builder.Host.UseSerilog((context, configs) =>
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>(); 
 builder.Services.AddProblemDetails(); 
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(); // Todo: Registrera genom ServiceRegistration med options konfig
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApplication(); 
 builder.Services.AddPersistance(); 
@@ -38,7 +45,7 @@ app.UseSerilogRequestLogging();
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
 
-// TODO: Registrera endpoints dynamiskt med reflektions
+app.MapEndpoints();
 
 app.Run();
 

@@ -16,7 +16,7 @@ internal sealed class GetAllRunnersHandler(IRunnerRepository repo, MapRunner map
             throw new Exception("No runners found.");
         }
 
-        return runners.Select(r => mapper.MapDto(r)).ToList();
+        return runners.Select(r => mapper.MapToDto(r)).ToList();
     }
 }
 

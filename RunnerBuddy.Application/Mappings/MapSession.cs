@@ -1,9 +1,10 @@
-﻿using RunnerBuddy.Domain.Dtos;
+﻿using RunnerBuddy.Application.Interfaces;
+using RunnerBuddy.Domain.Dtos;
 using RunnerBuddy.Domain.Entities;
 
 namespace RunnerBuddy.Application.Mappings;
 
-public class MapSession
+public class MapSession : IMapper<Session, SessionDto>
 {
     public SessionDto MapToDto(Session entity)
     {

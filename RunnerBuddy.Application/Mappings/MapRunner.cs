@@ -1,11 +1,12 @@
-﻿using RunnerBuddy.Domain.Dtos;
+﻿using RunnerBuddy.Application.Interfaces;
+using RunnerBuddy.Domain.Dtos;
 using RunnerBuddy.Domain.Entities;
 
 namespace RunnerBuddy.Application.Mappings;
 
-public class MapRunner
+public class MapRunner : IMapper<Runner, RunnerDto>
 {
-    public RunnerDto MapDto(Runner entity)
+    public RunnerDto MapToDto(Runner entity)
     {
         var dto = new RunnerDto
         {

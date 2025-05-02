@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RunnerBuddy.Api.EndpointRegistration;
 using RunnerBuddy.Api.ExceptionHandler;
 using RunnerBuddy.Application;
@@ -12,7 +12,22 @@ var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
     .CreateLogger();
-logger.Information("Vevar ig�ng maskineriet (>'-')> <('-'<) ^(' - ')^ <('-'<) (>'-')>");
+logger.Information(@"
+  _____                             _               _     _       
+ |  __ \                           | |             | |   | |      
+ | |__) |   _ _ __  _ __   ___ _ __| |__  _   _  __| | __| |_   _ 
+ |  _  / | | | '_ \| '_ \ / _ \ '__| '_ \| | | |/ _` |/ _` | | | |
+ | | \ \ |_| | | | | | | |  __/ |  | |_) | |_| | (_| | (_| | |_| |
+ |_|  \_\__,_|_| |_|_| |_|\___|_|  |_.__/ \__,_|\__,_|\__,_|\__, |
+                                                             __/ |
+                                                            |___/ 
+
+Vevar igång maskineriet!
+(>'-')>  <('-'<)  ^(' - ')^  <('-'<)  (>'-')>
+
+RunnerBuddy är igång! Lycka till med passen! 
+");
+
 
 var configs = new ConfigurationBuilder()  
     .AddJsonFile("appsettings.json")

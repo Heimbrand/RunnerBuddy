@@ -52,10 +52,11 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "RunnerBuddy")); 
-    app.MapOpenApi().AllowAnonymous();
+  
 }
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "RunnerBuddy"));
 
+app.MapOpenApi().AllowAnonymous();
 app.UseSerilogRequestLogging();
 app.UseExceptionHandler();
 app.UseHttpsRedirection();

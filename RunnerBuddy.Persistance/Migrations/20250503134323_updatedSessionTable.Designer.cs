@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RunnerBuddy.Persistance.Context;
 
@@ -11,9 +12,11 @@ using RunnerBuddy.Persistance.Context;
 namespace RunnerBuddy.Persistance.Migrations
 {
     [DbContext(typeof(RunnerBuddyDbContext))]
-    partial class RunnerBuddyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250503134323_updatedSessionTable")]
+    partial class updatedSessionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

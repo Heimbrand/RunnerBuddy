@@ -12,10 +12,13 @@ public class MapSession : IMapper<Session, SessionDto>
         {
             Id = entity.Id,
             Date = entity.Date,
-            Distance = entity.Distance,
+            PlannedDistance = entity.PlannedDistance,
+            ActualDistance = entity.ActualDistance,
             Location = entity.Location,
             Notes = entity.Notes,
-            RunnerId = entity.RunnerId
+            RunnerId = entity.RunnerId,
+            AveragePace = entity.AveragePace,
+            IsCompleted = entity.IsCompleted
         };
     }
     public Session MapToEntity(SessionDto dto)
@@ -24,10 +27,13 @@ public class MapSession : IMapper<Session, SessionDto>
         {
             Id = dto.Id,
             Date = dto.Date,
-            Distance = dto.Distance,
+            PlannedDistance = dto.PlannedDistance,
+            ActualDistance = dto.ActualDistance,
             Location = dto.Location,
             Notes = dto.Notes,
-            RunnerId = dto.RunnerId
+            RunnerId = dto.RunnerId,
+            AveragePace = dto.AveragePace,
+            IsCompleted = dto.IsCompleted
         };
     }
 }

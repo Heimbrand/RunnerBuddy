@@ -1,4 +1,6 @@
-﻿namespace RunnerBuddy.Domain.Entities;
+﻿using System.Runtime.InteropServices.JavaScript;
+
+namespace RunnerBuddy.Domain.Entities;
 
 public class Runner : BaseEntity
 {

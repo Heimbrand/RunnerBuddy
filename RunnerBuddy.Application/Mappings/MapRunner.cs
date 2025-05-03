@@ -25,10 +25,13 @@ public class MapRunner : IMapper<Runner, RunnerDto>
             {
                 Id = session.Id,
                 Date = session.Date,
-                Distance = session.Distance,
+                PlannedDistance = session.PlannedDistance,
+                ActualDistance = session.ActualDistance,
                 Location = session.Location,
                 Notes = session.Notes,
-                RunnerId = session.RunnerId
+                RunnerId = session.RunnerId,
+                AveragePace = session.AveragePace,
+                IsCompleted = session.IsCompleted
             };
             dto.Sessions?.Add(sessionDto);
         }
@@ -52,10 +55,13 @@ public class MapRunner : IMapper<Runner, RunnerDto>
             {
                 Id = session.Id,
                 Date = session.Date,
-                Distance = session.Distance,
+                PlannedDistance = session.PlannedDistance,
+                ActualDistance = session.ActualDistance,
                 Location = session.Location,
                 Notes = session.Notes,
-                RunnerId = session.RunnerId
+                RunnerId = session.RunnerId,
+                AveragePace = session.AveragePace,
+                IsCompleted = session.IsCompleted
             };
             entity.Sessions?.Add(sessionEntity);
         }

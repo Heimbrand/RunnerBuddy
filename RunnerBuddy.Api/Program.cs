@@ -44,6 +44,7 @@ builder.Host.UseSerilog((context, configs) =>
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>(); 
 builder.Services.AddProblemDetails(); 
 builder.Services.AddOpenApi(); // Todo: Registrera genom ServiceRegistration med options konfig
+builder.Services.AddEndpoints(typeof(Program).Assembly);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApplication(); 
 builder.Services.AddPersistance(); 

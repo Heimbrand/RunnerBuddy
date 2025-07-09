@@ -43,16 +43,18 @@ namespace RunnerBuddy.Api.ExceptionHandler
                 Exception => HttpStatusCode.InternalServerError,
             };
 
-            var message = ex.Message ?? "Oväntat fel har inträffat";
+            var message = statusCode switch
+            {
+                HttpStatusCode.Unauthorized => "Du har ej rättigheter att nyttja denna resurs.",
+                HttpStatusCode.BadRequest => "Ogiltlig begäran. Kontrollera datan du vill hantera/Visa.",
+                HttpStatusCode.NotFound => "Kunde ej hitta datan du bad om.",
+                HttpStatusCode.InternalServerError => "Oväntat fel har inträffat."
+            };
 
             return new ErrorDetails
-
             {
-
                 Message = message,
-
                 StatusCode = (int)statusCode
-
             };
 
         }
